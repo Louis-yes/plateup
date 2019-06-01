@@ -16,7 +16,7 @@ app.get('/recipe/:url', (req, res) => {
 
 function getMethod(url){
 	const urlarray = url.split('.')
-	const methods = [
+	const methods =[
 		{
 			name: 'jamieoliver',
 			method: getJaimieOliverRecipe
