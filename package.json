@@ -1,0 +1,26 @@
+{
+  "name": "plateup",
+  "version": "1.0.0",
+  "description": "A REST api for recipe websites",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Louis-yes/plateup.git"
+  },
+  "keywords": [
+    "Recipe"
+  ],
+  "author": "Louis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Louis-yes/plateup/issues"
+  },
+  "homepage": "https://github.com/Louis-yes/plateup#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "x-ray": "^2.3.3"
+  }
+}
