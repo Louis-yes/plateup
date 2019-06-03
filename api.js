@@ -2,7 +2,7 @@ const app = require('express')()
 const sources = require('./sources/sources').list
 
 app.get('/recipe/:url', (req, res) => {
-	const url = decodeURI(req.params.url)
+	const url = decodeURI(req.params.url).replace(/\?.+/, '')
 	res.type('json')
 	const method = getMethod(url)
 	if(method){

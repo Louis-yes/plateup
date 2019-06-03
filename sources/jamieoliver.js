@@ -21,6 +21,7 @@ function getRecipe(url){
     tags: ['.tags-list a@html']
   }]).then(function (res) {
     rec = res[0];
+    console.log(res.length)
     let newIngredients = []
     rec.ingredients.forEach((ing) => {
       // remove new lines
