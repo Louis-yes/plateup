@@ -14,14 +14,13 @@ function getRecipe(url){
     title: '.single-recipe-details-mobile-top h3',
     subheading: '.single-recipe-details-mobile-top .subheading',
     ingredients: ['.ingred-list li@html'],
-    method: ['.recipeSteps li@html'],
+    method: ['.recipeSteps li'],
     servings: '.recipe-detail.serves',
     cooktime: '.recipe-detail.time',
     difficulty: '.recipe-detail.difficulty',
     tags: ['.tags-list a@html']
   }]).then(function (res) {
     rec = res[0];
-    console.log(res.length)
     let newIngredients = []
     rec.ingredients.forEach((ing) => {
       // remove new lines

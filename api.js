@@ -16,7 +16,6 @@ app.get('/recipe/:url', (req, res, next) => {
 	const method = getMethod(url)
 	if(method){
 		method(url).then((rec) => {
-			console.log(typeof rec)
 			recString = JSON.stringify(rec)
 			res.send(recString)
 		})

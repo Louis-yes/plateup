@@ -12,7 +12,7 @@ const spaces = /\s+/g
 function getRecipe(url){
   const recipe = x(url, '.ar_recipe_index', [{
     title: '.recipe-summary__h1',
-    subheading: '.submitter__description@html',
+    subheading: '.submitter__description',
     ingredients: ['.checkList__line .recipe-ingred_txt@html'],
     method: ['.recipe-directions__list .recipe-directions__list--item@html'],
     // servings: '.servings-count@html',
