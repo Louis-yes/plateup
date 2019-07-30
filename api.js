@@ -17,9 +17,11 @@ app.get('/recipe/:url', (req, res, next) => {
 	if(method){
 		method(url).then((rec) => {
 			recString = JSON.stringify(rec)
+			res.status = 200;
 			res.send(recString)
 		})
 	} else {
+		res.status = 404;
 		res.send('Not a listed website')
 	}
 })
@@ -36,4 +38,4 @@ function getMethod(url){
 	return method
 }
 
-app.listen(3000, () => (console.log('listening on 3000...')))
+app.listen(8080, () => (console.log('listening on 3000...')))

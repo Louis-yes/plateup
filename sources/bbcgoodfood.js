@@ -15,6 +15,7 @@ function getRecipe(url){
     title: '.recipe-header__title',
     subheading: '.recipe-header__description',
     ingredients: ['.ingredients-list__item'],
+    ingredient_tooltips: ['.gf-tooltip'],
     method: ['.method__item'],
     servings: '.recipe-details__item--servings .recipe-details__text',
     cooktime: 'recipe-details__cooking-time-cook .mins',
@@ -27,6 +28,17 @@ function getRecipe(url){
     rec.subheading = rec.subheading.replace(spaces, ' ')
     rec.subheading = rec.subheading.trim()
     rec.method = tidyArray(rec.method);
+    let newIngredients = [];
+    rec.ingredients.forEach((ing, index) => {
+      let nIng = [];
+      rec.ingredient_tooltips.forEach((tt) => {
+        if(ing.includes(tt)){
+          const splitIng = ing.split(tt);
+          nIng = splitIng.splice(2,1);
+          rec.ingredients[index] = nIng;
+        }
+      });
+    })
     return rec
   }).catch((err) => {
     console.log(err)

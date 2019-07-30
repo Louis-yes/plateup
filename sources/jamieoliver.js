@@ -13,7 +13,7 @@ function getRecipe(url){
   const recipe = x(url, '#recipe-single', [{
     title: '.single-recipe-details-mobile-top h3',
     subheading: '.single-recipe-details-mobile-top .subheading',
-    ingredients: ['.ingred-list li@html'],
+    ingredients: ['.ingred-list li'],
     method: ['.recipeSteps li'],
     servings: '.recipe-detail.serves',
     cooktime: '.recipe-detail.time',
